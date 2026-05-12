@@ -1,0 +1,514 @@
+{
+  "course": {
+    "title": "SwiftUI 50 天高级学习计划",
+    "project": "ProxyOps Studio",
+    "projectDescription": "B2B 数据抓取 / 代理节点监控工作台",
+    "startDate": "2026-05-12",
+    "timezone": "Asia/Shanghai",
+    "requiredSections": ["主题", "学习重点", "项目实践", "核心理解"],
+    "notionDataSourceId": "collection://e33234ff-eb52-4804-91d0-9081fe59e52f",
+    "githubRepoPath": "/Users/liushan/Documents/Codex/SwiftUI-Learn"
+  },
+  "days": [
+    {
+      "day": 1,
+      "node": "节点 1",
+      "difficulty": "入门",
+      "topic": "SwiftUI 声明式 UI 与项目骨架",
+      "focus": "App、Scene、View、body、some View、值语义、View 不是 UIKit 实例对象",
+      "practice": "新建 ProxyOps Studio，建立 AppShell、DashboardHome、DesignSystem、PreviewData 基础目录",
+      "understanding": "SwiftUI 写的是界面描述，系统负责根据状态生成和更新真实 UI",
+      "codeSlug": "project_skeleton"
+    },
+    {
+      "day": 2,
+      "node": "节点 1",
+      "difficulty": "入门",
+      "topic": "View 组合与 Modifier 顺序",
+      "focus": "ViewBuilder、条件视图、Group、@ViewBuilder 函数、modifier 链式顺序、提取子 View",
+      "practice": "实现 StatusBadge、MetricCard、SectionHeader、IconButton 等基础组件",
+      "understanding": "Modifier 不是简单属性设置，而是不断包裹、转换视图描述",
+      "codeSlug": "view_composition"
+    },
+    {
+      "day": 3,
+      "node": "节点 1",
+      "difficulty": "入门",
+      "topic": "布局协商：从 Auto Layout 切换到 SwiftUI",
+      "focus": "Proposed Size、ideal size、required size、HStack、VStack、ZStack、Spacer、padding、frame",
+      "practice": "搭建三栏工作台：侧边栏、顶部工具栏、主内容区",
+      "understanding": "SwiftUI 布局是父视图提议，子视图选择，父视图再放置",
+      "codeSlug": "layout_negotiation"
+    },
+    {
+      "day": 4,
+      "node": "节点 1",
+      "difficulty": "入门",
+      "topic": "对齐、弹性与优先级",
+      "focus": "alignment、frame(maxWidth:)、fixedSize、layoutPriority、自定义 AlignmentGuide",
+      "practice": "实现自适应 KPI 卡片区：窄屏单列、宽屏多列、文字不挤压",
+      "understanding": "布局问题多数不是尺寸不对，而是轴向约束、理想尺寸和优先级没想清楚",
+      "codeSlug": "alignment_priority"
+    },
+    {
+      "day": 5,
+      "node": "节点 1",
+      "difficulty": "入门",
+      "topic": "列表、滚动与大量数据 UI",
+      "focus": "ScrollView、LazyVStack、ForEach、Identifiable、稳定 identity、懒加载边界",
+      "practice": "用 5,000 条模拟代理节点数据实现节点列表、状态分组、固定表头",
+      "understanding": "Lazy 容器解决创建成本，但稳定身份和轻量行视图才决定滚动质量",
+      "codeSlug": "large_data_list"
+    },
+    {
+      "day": 6,
+      "node": "节点 1",
+      "difficulty": "进阶",
+      "topic": "数据驱动导航",
+      "focus": "NavigationStack、NavigationPath、navigationDestination、枚举路由、Hashable 路由状态",
+      "practice": "建立 Route 和 Router，实现节点详情、配置页、日志页跳转",
+      "understanding": "导航不是 push 一个页面，而是一段可观察、可恢复、可测试的状态",
+      "codeSlug": "data_driven_navigation"
+    },
+    {
+      "day": 7,
+      "node": "节点 1",
+      "difficulty": "进阶",
+      "topic": "安全区、图层与现代面板感",
+      "focus": "safeAreaInset、overlay、background、Material、zIndex、toolbar、悬浮层",
+      "practice": "给工作台加悬浮统计栏、毛玻璃状态条、右侧 Inspector 占位层",
+      "understanding": "复杂界面来自清晰图层：内容层、导航层、反馈层、临时呈现层要分开",
+      "codeSlug": "safe_area_layers"
+    },
+    {
+      "day": 8,
+      "node": "节点 1",
+      "difficulty": "进阶",
+      "topic": "本地状态与双向绑定",
+      "focus": "@State、@Binding、@FocusState、表单输入、局部 UI 状态生命周期",
+      "practice": "实现过滤面板：地区、协议、延迟阈值、可用性开关、搜索框",
+      "understanding": "状态必须有唯一源头；Binding 是对子状态的受控读写窗口",
+      "codeSlug": "local_state_binding"
+    },
+    {
+      "day": 9,
+      "node": "节点 1",
+      "difficulty": "进阶",
+      "topic": "Environment 与上下文注入",
+      "focus": "@Environment、自定义 EnvironmentKey、颜色方案、动态字体、locale、依赖入口",
+      "practice": "注入主题、时间格式、模拟服务、用户偏好；让深层组件不再层层传参",
+      "understanding": "Environment 适合传上下文能力，不适合塞成无边界全局仓库",
+      "codeSlug": "environment_context"
+    },
+    {
+      "day": 10,
+      "node": "节点 1",
+      "difficulty": "进阶",
+      "topic": "第一节点综合验收",
+      "focus": "Preview 驱动、组件拆分、静态数据、响应式布局、基础可访问性、代码组织",
+      "practice": "完成静态版 ProxyOps Studio v0.1：可导航、可筛选、有列表、有详情、有专业视觉骨架",
+      "understanding": "SwiftUI 的第一性原理是：稳定身份、单向数据、组合式布局、状态驱动界面",
+      "codeSlug": "node_1_review"
+    },
+    {
+      "day": 11,
+      "node": "节点 2",
+      "difficulty": "进阶",
+      "topic": "Observation 框架与 @Observable 宏",
+      "focus": "@Observable、属性级追踪、getter 读取追踪、与 ObservableObject/@Published 的差异",
+      "practice": "创建 WorkspaceModel、NodeStore、FilterModel，替换静态 Preview 数据入口",
+      "understanding": "SwiftUI 只会重绘真正读取了变化属性的视图，状态追踪粒度比 Combine 时代更细",
+      "codeSlug": "observation_observable"
+    },
+    {
+      "day": 12,
+      "node": "节点 2",
+      "difficulty": "进阶",
+      "topic": "状态所有权与 Source of Truth",
+      "focus": "@State 持有 Observable 对象、局部状态与共享状态边界、何时不该上提状态",
+      "practice": "明确工作台状态分层：导航状态、过滤状态、节点数据、UI 展开状态",
+      "understanding": "状态架构的核心不是“放哪里都能用”，而是谁拥有、谁读取、谁允许修改",
+      "codeSlug": "state_ownership"
+    },
+    {
+      "day": 13,
+      "node": "节点 2",
+      "difficulty": "进阶",
+      "topic": "Environment 依赖注入进阶",
+      "focus": "@Environment(Type.self)、自定义环境值、依赖默认值、Preview 注入策略",
+      "practice": "将 WorkspaceModel、主题、模拟数据服务注入到工作台深层组件",
+      "understanding": "Environment 应传递稳定上下文和服务入口，不应变成混乱的全局变量池",
+      "codeSlug": "environment_di"
+    },
+    {
+      "day": 14,
+      "node": "节点 2",
+      "difficulty": "进阶",
+      "topic": "@Bindable 与复杂表单",
+      "focus": "@Bindable、Binding 投影、嵌套属性编辑、表单草稿模型、提交与取消",
+      "practice": "实现代理节点配置表单：协议、地区、认证、并发数、超时、标签",
+      "understanding": "双向绑定适合编辑界面，但真实业务修改最好经过明确提交边界",
+      "codeSlug": "bindable_forms"
+    },
+    {
+      "day": 15,
+      "node": "节点 2",
+      "difficulty": "进阶",
+      "topic": "派生状态与过滤管线",
+      "focus": "computed properties、排序、筛选、搜索、防止重复存储派生数据",
+      "practice": "实现节点列表筛选：状态、地区、协议、延迟区间、关键词组合过滤",
+      "understanding": "能计算出来的数据不要存第二份，否则很快会产生状态不一致",
+      "codeSlug": "derived_filtering"
+    },
+    {
+      "day": 16,
+      "node": "节点 2",
+      "difficulty": "高级",
+      "topic": "高频状态与低频配置拆分",
+      "focus": "状态切割、垂直模型、读写隔离、高频更新对 UI 的影响",
+      "practice": "拆分 NodeMetricsModel 与 UserPreferencesModel，模拟延迟、吞吐、在线率刷新",
+      "understanding": "性能优化首先是状态建模问题，其次才是渲染技巧问题",
+      "codeSlug": "state_partitioning"
+    },
+    {
+      "day": 17,
+      "node": "节点 2",
+      "difficulty": "高级",
+      "topic": "View 重绘诊断与阻击",
+      "focus": "_printChanges()、Instruments SwiftUI、View body 成本、稳定子树、Equatable 视图策略",
+      "practice": "制造一次全屏重绘雪崩，再通过拆分读取点和组件边界修复",
+      "understanding": "SwiftUI 重建 View 很正常，危险的是让无关视图读取了不该读取的状态",
+      "codeSlug": "redraw_diagnostics"
+    },
+    {
+      "day": 18,
+      "node": "节点 2",
+      "difficulty": "高级",
+      "topic": "Intent 驱动的数据修改",
+      "focus": "用户意图、命令方法、直接改属性的风险、状态修改入口收敛",
+      "practice": "为过滤、节点编辑、收藏、禁用节点建立 WorkspaceAction 或方法入口",
+      "understanding": "UI 应表达“用户想做什么”，而不是到处散落业务状态突变",
+      "codeSlug": "intent_driven_mutation"
+    },
+    {
+      "day": 19,
+      "node": "节点 2",
+      "difficulty": "高级",
+      "topic": "陈旧数据与原子更新",
+      "focus": "stale data、批量 mutation、一致性边界、Transaction、异步更新前的快照意识",
+      "practice": "实现批量启停节点、批量打标签，并保证列表、详情、统计卡同时一致",
+      "understanding": "UI 不一致往往不是 SwiftUI 错了，而是状态更新没有形成一个完整事务",
+      "codeSlug": "atomic_updates"
+    },
+    {
+      "day": 20,
+      "node": "节点 2",
+      "difficulty": "高级",
+      "topic": "第二节点综合验收",
+      "focus": "Observation 架构、状态分层、表单编辑、筛选管线、性能诊断",
+      "practice": "完成 ProxyOps Studio v0.2：真实状态驱动、可编辑节点、可筛选列表、精准刷新",
+      "understanding": "高级 SwiftUI 的关键能力是让状态变化既可预测，又只影响该影响的界面",
+      "codeSlug": "node_2_review"
+    },
+    {
+      "day": 21,
+      "node": "节点 3",
+      "difficulty": "高级",
+      "topic": "Swift 6 严格并发生存法则",
+      "focus": "数据竞争检查、并发域、actor isolation、Sendable、@Sendable closure、编译器警告升级为设计约束",
+      "practice": "将项目切到 Swift 6 严格并发检查，标记并整理当前状态模型的并发边界",
+      "understanding": "Swift 6 并发不是语法升级，而是把线程安全从运行时事故提前到编译期处理",
+      "codeSlug": "swift_6_concurrency"
+    },
+    {
+      "day": 22,
+      "node": "节点 3",
+      "difficulty": "高级",
+      "topic": "@MainActor 的正确边界",
+      "focus": "主线程渲染、MainActor 隔离、MainActor.run、避免把所有对象粗暴标成 @MainActor",
+      "practice": "将 UI-facing 的 WorkspaceModel 保持主线程安全，同时把模拟网络服务移出主线程",
+      "understanding": "@MainActor 应保护 UI 状态，不应该吞掉底层任务的并行能力",
+      "codeSlug": "main_actor_boundary"
+    },
+    {
+      "day": 23,
+      "node": "节点 3",
+      "difficulty": "高级",
+      "topic": ".task 与视图生命周期绑定",
+      "focus": ".task、.task(id:)、自动取消、Task.isCancelled、替代 onAppear 的异步场景",
+      "practice": "为节点详情页接入实时状态监听，切换节点时自动取消旧监听",
+      "understanding": "SwiftUI 视图生命周期是不稳定的，异步任务必须跟状态身份绑定，而不是跟页面出现绑定",
+      "codeSlug": "task_lifecycle"
+    },
+    {
+      "day": 24,
+      "node": "节点 3",
+      "difficulty": "高级",
+      "topic": "AsyncSequence 与异步事件流",
+      "focus": "AsyncSequence、for await、异步迭代、取消传播、事件消费模型",
+      "practice": "把节点状态变化建模为 AsyncSequence<NodeEvent>，由 UI 层持续消费",
+      "understanding": "实时 UI 最自然的数据形态不是回调，而是一条可以取消、可以遍历的异步事件流",
+      "codeSlug": "async_sequence_events"
+    },
+    {
+      "day": 25,
+      "node": "节点 3",
+      "difficulty": "高级",
+      "topic": "AsyncStream 桥接底层回调",
+      "focus": "AsyncStream、Continuation、buffering policy、yield、finish、回调 API 适配",
+      "practice": "模拟底层代理 SDK 回调，将连接、断开、延迟、错误事件桥接成 AsyncStream",
+      "understanding": "AsyncStream 是旧世界回调与 Swift 并发世界之间的干净边界",
+      "codeSlug": "async_stream_bridge"
+    },
+    {
+      "day": 26,
+      "node": "节点 3",
+      "difficulty": "架构级",
+      "topic": "Actor 作为底层状态机",
+      "focus": "actor、串行隔离、跨 actor 调用、可重入性、内部可变状态保护",
+      "practice": "实现 ProxyConnectionActor，维护节点连接状态、重试次数、最近心跳",
+      "understanding": "Actor 适合保护底层长期可变状态，让并发访问变成受控消息传递",
+      "codeSlug": "actor_state_machine"
+    },
+    {
+      "day": 27,
+      "node": "节点 3",
+      "difficulty": "架构级",
+      "topic": "非 Sendable 类型治理",
+      "focus": "非线程安全对象、值快照、DTO、不可变结构体、@unchecked Sendable 的风险",
+      "practice": "将底层模拟 SDK 返回的引用对象转换为 NodeStatusSnapshot 后再进入 UI 层",
+      "understanding": "跨并发域传递的不是“对象”，而应该是安全、不可变、语义清楚的数据快照",
+      "codeSlug": "sendable_snapshots"
+    },
+    {
+      "day": 28,
+      "node": "节点 3",
+      "difficulty": "架构级",
+      "topic": "高频事件、背压与 UI 节流",
+      "focus": "事件洪峰、buffer 策略、debounce/throttle 思维、批量合并、主线程更新频率",
+      "practice": "模拟每秒数百条节点指标事件，并合并为每 250ms 一次的 UI 更新",
+      "understanding": "UI 不需要消费所有底层事件，它需要消费足够准确且不会压垮渲染管线的状态",
+      "codeSlug": "event_backpressure"
+    },
+    {
+      "day": 29,
+      "node": "节点 3",
+      "difficulty": "架构级",
+      "topic": "异步错误、重试与取消设计",
+      "focus": "throwing async、指数退避、取消优先级、错误状态建模、用户可恢复错误",
+      "practice": "为节点连接增加失败、重试、暂停、手动重连、取消任务的完整状态流",
+      "understanding": "好的并发设计必须同时回答：失败怎么办、取消怎么办、用户看到什么",
+      "codeSlug": "async_error_retry"
+    },
+    {
+      "day": 30,
+      "node": "节点 3",
+      "difficulty": "架构级",
+      "topic": "第三节点综合验收",
+      "focus": "严格并发、Actor、AsyncStream、MainActor 边界、Sendable 快照、高频 UI 更新",
+      "practice": "完成 ProxyOps Studio v0.3：模拟 TCP/代理连接状态机接入工作台，零并发警告，不阻塞主线程",
+      "understanding": "SwiftUI 高级工程的关键是：底层并发自由运行，UI 只接收安全、节制、可解释的状态",
+      "codeSlug": "node_3_review"
+    },
+    {
+      "day": 31,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "View 实例化的非确定性陷阱",
+      "focus": "View 频繁创建、init 副作用风险、轻量 View 原则、依赖创建位置",
+      "practice": "审查 ProxyOps Studio 所有 View，移除 View init 中的重计算和服务创建",
+      "understanding": "SwiftUI View 是描述值，不是生命周期稳定的控制器",
+      "codeSlug": "view_instantiation"
+    },
+    {
+      "day": 32,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "GeometryReader 的边界与替代方案",
+      "focus": "GeometryReader、布局贪婪问题、onGeometryChange、PreferenceKey、尺寸读取时机",
+      "practice": "为统计卡片区实现宽度感知布局，避免 GeometryReader 撑爆父容器",
+      "understanding": "读取几何信息不能破坏布局协商，测量和布局职责要分开",
+      "codeSlug": "geometry_reader"
+    },
+    {
+      "day": 33,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "Grid、LazyVGrid 与二维信息密度",
+      "focus": "Grid、GridRow、LazyVGrid、列宽策略、静态网格与懒加载网格取舍",
+      "practice": "实现节点健康矩阵：按地区和协议展示在线率、失败率、平均延迟",
+      "understanding": "网格不是简单多列列表，而是二维对齐、信息密度和扫描效率的平衡",
+      "codeSlug": "grid_density"
+    },
+    {
+      "day": 34,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "自定义 Layout 协议入门",
+      "focus": "sizeThatFits、placeSubviews、ProposedViewSize、子视图代理、缓存",
+      "practice": "实现 AdaptivePanelLayout，让监控卡片按重要性自动换行和占位",
+      "understanding": "当内置容器表达不了规则时，自定义 Layout 是接管布局算法的正道",
+      "codeSlug": "custom_layout"
+    },
+    {
+      "day": 35,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "AnyLayout 与响应式布局切换",
+      "focus": "AnyLayout、布局类型擦除、保留子视图状态、宽窄屏切换、动态字体适配",
+      "practice": "让详情页在窄屏为纵向布局、宽屏为左右分栏，切换时保留输入状态",
+      "understanding": "响应式布局不只是换样式，更要避免因为容器类型变化丢失子视图状态",
+      "codeSlug": "anylayout_responsive"
+    },
+    {
+      "day": 36,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "滚动系统与定位控制",
+      "focus": "ScrollViewReader、滚动锚点、选中项定位、列表状态保持、分页加载意识",
+      "practice": "节点列表支持点击告警后自动滚动到对应节点，并高亮定位",
+      "understanding": "滚动位置也是产品状态，不能只依赖用户手势和默认行为",
+      "codeSlug": "scroll_positioning"
+    },
+    {
+      "day": 37,
+      "node": "节点 4",
+      "difficulty": "高级",
+      "topic": "手势、选择与桌面级交互",
+      "focus": "Gesture、hover、context menu、keyboard shortcuts、selection、focus",
+      "practice": "增加节点多选、右键操作、快捷键禁用/启用、键盘跳转详情",
+      "understanding": "专业工作台需要高效操作模型，不能只按移动端点击路径设计",
+      "codeSlug": "desktop_interaction"
+    },
+    {
+      "day": 38,
+      "node": "节点 4",
+      "difficulty": "架构级",
+      "topic": "动画与状态过渡",
+      "focus": "animation(_:value:)、withAnimation、transition、matchedGeometryEffect、减少无意义动画",
+      "practice": "为筛选、详情切换、告警出现、节点状态变化添加克制动画",
+      "understanding": "动画应该解释状态变化，而不是装饰状态变化",
+      "codeSlug": "state_animation"
+    },
+    {
+      "day": 39,
+      "node": "节点 4",
+      "difficulty": "架构级",
+      "topic": "可访问性与国际化基础",
+      "focus": "accessibility label/value/hint、Dynamic Type、Reduce Motion、VoiceOver 扫描顺序、本地化字符串",
+      "practice": "为 KPI 卡片、节点行、图表占位、操作按钮补全可访问性语义",
+      "understanding": "高级 UI 不只是好看，还要能被不同能力、不同语言环境的用户可靠使用",
+      "codeSlug": "accessibility_i18n"
+    },
+    {
+      "day": 40,
+      "node": "节点 4",
+      "difficulty": "架构级",
+      "topic": "第四节点综合验收",
+      "focus": "高级布局、响应式切换、滚动定位、交互效率、动画克制、可访问性",
+      "practice": "完成 ProxyOps Studio v0.4：自适应专业工作台，支持复杂信息密度和桌面级操作",
+      "understanding": "SwiftUI 高级界面的本质是让布局、交互、状态、动画共同服务信息理解",
+      "codeSlug": "node_4_review"
+    },
+    {
+      "day": 41,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "SwiftUI 架构范式复盘",
+      "focus": "MVVM 的边界、ViewModel 过度膨胀、Observation 下的状态归属、Feature-Based 架构",
+      "practice": "重构项目目录为 Features/Dashboard、Features/Nodes、Features/Settings、Core、DesignSystem",
+      "understanding": "SwiftUI 架构的重点不是套模式，而是让状态、意图、依赖和 UI 边界清楚",
+      "codeSlug": "architecture_recap"
+    },
+    {
+      "day": 42,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "Core Domain 与 UI 解耦",
+      "focus": "领域模型、DTO、Use Case、Repository、纯 Swift 模块、UI 无关业务规则",
+      "practice": "抽离节点评分、告警等级、连接策略、筛选规则为纯业务模块",
+      "understanding": "真正可维护的 SwiftUI 项目，业务逻辑不应该依赖 View 或 SwiftUI 生命周期",
+      "codeSlug": "core_domain"
+    },
+    {
+      "day": 43,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "单向数据流与 Intent Dispatcher",
+      "focus": "State、Intent、Reducer 思想、命令入口、避免视图直接修改复杂业务状态",
+      "practice": "为节点启停、重连、批量标记、过滤变更设计统一 Intent 分发入口",
+      "understanding": "UI 负责表达用户意图，业务层负责决定状态如何变化",
+      "codeSlug": "unidirectional_flow"
+    },
+    {
+      "day": 44,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "持久化与轻量缓存",
+      "focus": "SwiftData、@Model、ModelContainer、ModelContext、@Query、缓存与真实状态区分",
+      "practice": "持久化用户配置、收藏节点、最近筛选条件、节点分组偏好",
+      "understanding": "持久化不是把所有状态存起来，而是识别哪些数据值得跨启动保留",
+      "codeSlug": "swiftdata_cache"
+    },
+    {
+      "day": 45,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "用户偏好与场景恢复",
+      "focus": "@AppStorage、@SceneStorage、窗口状态、选中项恢复、轻量状态保存",
+      "practice": "保存主题、侧边栏宽度、最后打开页面、当前选中节点、列表滚动上下文",
+      "understanding": "App 状态恢复要轻量、确定、可解释，不能把大模型塞进场景存储",
+      "codeSlug": "app_scene_storage"
+    },
+    {
+      "day": 46,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "Preview 驱动开发体系",
+      "focus": "Preview 数据工厂、依赖注入、边界状态、错误状态、深色模式、动态字体",
+      "practice": "为核心页面建立 Preview Matrix：空数据、加载中、错误、高频刷新、大字体、深色模式",
+      "understanding": "Preview 不是截图工具，而是 SwiftUI 组件设计和架构健康度检测器",
+      "codeSlug": "preview_matrix"
+    },
+    {
+      "day": 47,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "测试体系建设",
+      "focus": "Swift Testing、XCTest、异步测试、领域逻辑测试、UI smoke test、性能回归测试",
+      "practice": "测试节点评分、筛选管线、Actor 状态机、AsyncStream 取消、关键 UI 流程",
+      "understanding": "SwiftUI 项目要优先测试业务规则和状态流，少测脆弱的像素细节",
+      "codeSlug": "testing_system"
+    },
+    {
+      "day": 48,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "工程质量与性能预算",
+      "focus": "Instruments、内存图、启动成本、滚动帧率、主线程占用、构建配置",
+      "practice": "建立性能检查清单：5000 节点滚动、100Hz 事件流、冷启动、详情切换",
+      "understanding": "高级工程不是“感觉很流畅”，而是有可重复验证的性能预算",
+      "codeSlug": "performance_budget"
+    },
+    {
+      "day": 49,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "最终整合与产品级打磨",
+      "focus": "空状态、错误恢复、加载态、权限态、可访问性复查、文案一致性",
+      "practice": "完成 ProxyOps Studio v1.0 RC：统一视觉、状态、错误、交互和恢复体验",
+      "understanding": "产品级 SwiftUI 应用必须覆盖正常路径、异常路径和用户迷路时的路径",
+      "codeSlug": "product_polish"
+    },
+    {
+      "day": 50,
+      "node": "节点 5",
+      "difficulty": "架构级",
+      "topic": "毕业设计验收",
+      "focus": "架构讲解、代码审查、并发安全、状态追踪、布局质量、测试覆盖、性能证明",
+      "practice": "交付完整 ProxyOps Studio v1.0，并写一份架构说明：模块、数据流、并发边界、测试策略",
+      "understanding": "你不只是会写 SwiftUI，而是能设计、解释、验证并长期维护一个现代 SwiftUI 应用",
+      "codeSlug": "graduation_review"
+    }
+  ]
+}
